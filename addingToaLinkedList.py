@@ -57,7 +57,19 @@ class LinkedList:
             if (temp.data == key):
                 self.head = temp.next
                 temp = None
+                return
+            
+        while (temp is not None):
+            if (temp.data == key):
+                break 
+            prev = temp
+            temp = temp.next
+            
+            if (temp == None):
                 return 
+            
+            prev.next = temp.next
+            temp = None 
         
     
     
@@ -71,5 +83,5 @@ third = Node(3)
 llist.head.next = second
 second.next = third
 llist.printlist()
-llist.deleteNode(1)
+llist.deleteNode(2)
 llist.printlist()
