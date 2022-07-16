@@ -1,3 +1,5 @@
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -48,6 +50,17 @@ class LinkedList:
         # Set the last pointer to the new Node 
         last.next = newNode
     
+    def deleteNode(self, key):
+        temp = self.head
+        
+        if (temp is not None):
+            if (temp.data == key):
+                self.head = temp.next
+                temp = None
+                return 
+        
+    
+    
 # Creating the List 
 llist = LinkedList()
 llist.head = Node(1)
@@ -57,6 +70,6 @@ third = Node(3)
 #Pointers 
 llist.head.next = second
 second.next = third
-
-llist.atEnd(4)
+llist.printlist()
+llist.deleteNode(1)
 llist.printlist()
